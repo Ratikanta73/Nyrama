@@ -1,0 +1,218 @@
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body Style */
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f5f1e9;
+    font-family: Arial, sans-serif;
+}
+
+/* Main Link Tree Container */
+.link-tree {
+    text-align: center;
+    padding: 20px;
+    width: 100%;
+    max-width: 400px;
+    background-color: #f5f1e9;
+    border-radius: 15px;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Gradient Background Animation */
+.link-tree::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(70deg, #d4b88f, #e8d4b3, #f2e1cc);
+    background-size: 300%;
+    z-index: -1;
+    animation: gradientMove 8s linear infinite;
+    border-radius: inherit;
+}
+
+@keyframes gradientMove {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+/* Content Container */
+.link-tree .content {
+    background-color: #fffdf7;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 350px;
+    position: relative;
+    z-index: 1;
+}
+
+/* Logo Container */
+.logos {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+/* Logo Styles */
+.logo {
+    width: 150px;
+    border-radius: 8px;
+    transition: box-shadow 0.3s ease;
+}
+
+.logo:hover {
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+/* Heading & Subheading */
+.profile h1 {
+    font-size: 24px;
+    color: #9b541a;
+    margin-bottom: 8px;
+}
+
+.profile h3 {
+    font-size: 16px;
+    color: #7d6343;
+    font-weight: 400;
+    margin-bottom: 20px;
+}
+
+/* Social Links Container */
+.links {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 15px;
+}
+
+/* Default Link Box Style */
+.link-box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 15px;
+    background-color: #f7e7d0;
+    color: #7d6343;
+    text-decoration: none;
+    border-radius: 10px;
+    transition: transform 0.3s, background-color 0.3s;
+    font-size: 18px;
+}
+
+.link-box i {
+    margin-right: 10px;
+    font-size: 24px;
+    color: #b5835a;
+}
+
+.link-box span {
+    font-weight: 600;
+}
+
+.link-box:hover {
+    background-color: #d4b88f;
+    color: #110000;
+    transform: scale(1.05);
+}
+
+/* Yellow Theme for Namastey Yatri Links */
+.namastey-link {
+    background-color: #fdf3c5;
+    /* background-color: #f7e7d0; */
+    color: #89663b;
+}
+
+.namastey-link:hover {
+    background-color: #f6c947;
+    color: #000000;
+}
+
+/* Footer Text */
+h5, a {
+    text-decoration: none;
+    color: #830707;
+    font-size: 15px;
+    margin-top: 15px;
+}
+
+h6 {
+    color: #f4d6bd;
+    font-size: 12px;
+    margin-top: 15px;
+}
+
+/* Fade-in Animation */
+.link-tree {
+    opacity: 0;
+    transform: translateY(50px);
+    animation: fadeIn 1.5s forwards;
+}
+
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 768px) {
+    .logo {
+        width: 60px;
+    }
+
+    .profile h1 {
+        font-size: 22px;
+    }
+
+    .profile h3 {
+        font-size: 15px;
+    }
+
+    .link-box {
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 480px) {
+    .logo {
+        width: 50px;
+    }
+
+    .profile h1 {
+        font-size: 20px;
+    }
+
+    .profile h3 {
+        font-size: 14px;
+    }
+
+    .link-box {
+        font-size: 15px;
+        padding: 12px;
+    }
+}
